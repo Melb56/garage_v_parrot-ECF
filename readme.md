@@ -38,8 +38,7 @@ Dites comment faire pour lancer votre projet php,composer
 
 Fabriqué avec
 Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
+VSCode
 
-exemples :
-
-Materialize.css - Framework CSS (front-end)
-Atom - Editeur de textes
+### Lancer des tests
+php bin/php --testdox
