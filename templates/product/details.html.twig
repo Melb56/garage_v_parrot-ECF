@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil{% endblock %}
+{% block title %}Détails{% endblock %}
 
 
 {% block body %}
@@ -22,30 +22,25 @@
     <!-- Titre -->
       <main class="col-lg-6">
         <div class="ps-lg-3">
-          <h4 class="title text-dark">Chevrolet</h4>
+          <h4 class="title text-dark">{{product.title}}</h4>
 
           <div class="mb-3">
-            <span class="h5">15 000€</span>
+            <span class="h5">Prix : {{product.price}}€</span>
         </div>
     <!-- détails -->
         <div class="row">
 
-            <dt class="col-3">Km :</dt>
+            <dt class="col-3">Km : <{{product.km}}Km</dt>
             <!-- <dd class="col-9"></dd> -->
 
             <dt class="col-3">Année :</dt>
             <!-- <dd class="col-9"></dd> -->
 
-            <dt class="col-3">Carburant :</dt>
-            <!-- <dd class="col-9"></dd> -->
+        
             
           </div>
 
-          <p>
-            Caractéristiques TABLEAU
-            Equipement LISTE
-            Option installés
-          </p>
+          <p>{{product.description}}</p>
 
        <div class=text-center><button type="button" class="btn btn-primary btn-lg" href="#"> <b>Nous contacter</b> </button></div> 
 

@@ -19,26 +19,27 @@ Composer
 Symfony CLI
 Docker
 Docker-compose
-MySQL
-Xampp
+nodejs et npm
 
 Vous pouvez vérifier les pré-requis Back avec la commander suivante (de la CLI Symfony) : Symfony check:requirements
 
 #### Serveur
-
-
-### Installation
-Les étapes pour installer votre programme est d'installer avec la ligne de commander Symfony 
+MySQL
+Xampp
 
 ### Lancer l'environnement de développement
+compser install
+npm install
 docker-composer up -d
 Symfony serve -d
-Démarrage
-Dites comment faire pour lancer votre projet php,composer
 
-Fabriqué avec
-Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
+### Ajouter des données de tests
+symfony console doctrine:fixatures:load
+
+### Fabriqué avec 
 VSCode
+Entrez les programmes/logiciels/ressources que vous avez utilisé pour développer votre projet
 
-### Lancer des tests
+
+## Lancer des tests
 php bin/php --testdox

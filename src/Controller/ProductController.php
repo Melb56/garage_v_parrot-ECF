@@ -10,15 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
-    #[Route('/voitures-doccasion', name: 'app_product')]
-    public function index(): Response
+    #[Route('/voitures-doccasion', name: 'product_')]
+    
+    public function product(ProductRepository $productRepository): Response
     {
         return $this->render('product/index.html.twig', [
-        
+            'product' => $productRepository->findAll(),
         ]);
     }
 
-    #[Route('/voitures-doccasion', name: 'détails')]
+    #[Route('/détails', name: 'détails')]
     public function details(Product $product): Response
     {
         return $this->render('product/details.html.twig', compact('product') [

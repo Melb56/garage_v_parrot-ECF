@@ -1,75 +1,49 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}Voitures d'occasion{% endblock %}
 
-{% block body %}
-//{% include 'product/details.html.twig' %}
-  
-    <main role="main">
 
-      <div class="text-center">
+
+
+{% block body %}
+
+<div class="text-center">
         <div class="container">
           <h1>Voiture d'occasion</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
 ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..</p>         
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..</p> <div>   
             <!--Bouton Nous contacter-->    
             <button type="button" class="btn btn-primary btn-lg" href="#"> <b>Nous contacter</b> </button>       
         </div>
+  </div>
+
+{% for product in product %}
+<main>
+  <div class="album py-5 bg-body-white">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="card-img-top" src="img\chevy-impala-6889699_1280.jpg" alt="Image"></img>
+            <div class="card-body">
+              <div class="text-center"><h4 >{{ product.title }}<h4></div>
+              <p class="card-text">Prix : {{ product.price }}€ <br> Km : {{ product.km }}Km<br> Année : {{ product.dateTime }}</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn">
+                  <button type="button" class="btn btn-sm btn-outline-secondary" href="product\details.html.twig">Détails</button>
+            </div>  
+          </div>                
+        </div>
       </div>
-
-      <!--Annonces-->
-      <div class="album py-5 bg-white">
-        <div class="container">
-          <div class="row">
-           <!--voiture 1 -->
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow"> 
-                <img src="img\chevy-impala-6889699_1280.jpg" alt="Image">
-                <div class="card-body">
-                  <div class="text-center"><h4>Chevrolet<h4></div>
-                  <p class="card-text">Prix : <br>Km : <br>Année :  <br>Carburant :</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" src="#">Détails</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!--voiture 2 -->
-             <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img src="img\pexels-photo-3449979.jpeg" alt="Image">
-                <div class="card-body">
-                  <div class="text-center"><h4>Nissan<h4></div>
-                  <p class="card-text">Prix : <br>Km : <br>Année :  <br>Carburant :</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" src="#">Détails</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          <!--voiture 3 -->
-            <div class="col-md-4">
-              <div class="card mb-4 box-shadow">
-                <img src="img\photo-1646029642262-022158ff5794.avif" alt="Image">
-                <div class="card-body">
-                  <div class="text-center"><h4>Hyundai Tucson<h4></div>
-                  <p class="card-text">Prix : <br>Km : <br>Année :  <br>Carburant :</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-sm btn-outline-secondary" src="#">Détails</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-         
-            
-
-    </main>
+    </div>
+  </div>
+</main>
+  
+{% endfor %} 
 {% endblock %}
+
+
