@@ -14,20 +14,20 @@ class ContactForm
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $lastname = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $firstname = null;
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column]
-    private ?bool $object = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $subject = null;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $messageContent = null;
+    private ?string $message = null;
 
     public function getId(): ?int
     {
@@ -39,7 +39,7 @@ class ContactForm
         return $this->lastname;
     }
 
-    public function setLastname(string $lastname): static
+    public function setLastname(?string $lastname): static
     {
         $this->lastname = $lastname;
 
@@ -51,7 +51,7 @@ class ContactForm
         return $this->firstname;
     }
 
-    public function setFirstname(string $firstname): static
+    public function setFirstname(?string $firstname): static
     {
         $this->firstname = $firstname;
 
@@ -70,26 +70,26 @@ class ContactForm
         return $this;
     }
 
-    public function isObject(): ?bool
+    public function getSubject(): ?string
     {
-        return $this->object;
+        return $this->subject;
     }
 
-    public function setObject(bool $object): static
+    public function setSubject(?string $subject): static
     {
-        $this->object = $object;
+        $this->subject = $subject;
 
         return $this;
     }
 
-    public function getMessageContent(): ?string
+    public function getMessage(): ?string
     {
-        return $this->messageContent;
+        return $this->message;
     }
 
-    public function setMessageContent(string $messageContent): static
+    public function setMessage(string $message): static
     {
-        $this->messageContent = $messageContent;
+        $this->message = $message;
 
         return $this;
     }
