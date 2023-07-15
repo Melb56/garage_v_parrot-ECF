@@ -1,51 +1,50 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Détails{% endblock %}
+
+
+{% block title %}Voitures d'occasion{% endblock %}
+
+
 
 
 {% block body %}
-    
-<section class="py-5">
-  <div class="container">
-    <div class="row gx-5">
-     <!-- photo -->
-      <aside class="col-lg-6">
-        <div class="border rounded-4 mb-3 d-flex justify-content-center">
-          <a >
-            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="img\chevy-impala-6889699_1280.jpg" />
-          </a>
+
+<div class="text-center">
+        <div class="container">
+       
+          <h1>Voiture d'occasion</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..</p> <div>   
+            <!--Bouton Nous contacter-->    
+            <a><button type="button" class="btn btn-primary btn-lg" href="{{ path('contact')}}">Nous contacter</button></a>       
         </div>
-        <div class="d-flex justify-content-center mb-3">
-        </div>
-      </aside>
-
-    <!-- Titre -->
-      <main class="col-lg-6">
-        <div class="ps-lg-3">
-          <h4 class="title text-dark">{{product.title}}</h4>
-
-          <div class="mb-3">
-            <span class="h5">Prix : {{product.price}}€</span>
-        </div>
-    <!-- détails -->
-        <div class="row">
-
-            <dt class="col-3">Km : <{{product.km}}Km</dt>
-            <!-- <dd class="col-9"></dd> -->
-
-            <dt class="col-3">Année :</dt>
-            <!-- <dd class="col-9"></dd> -->
-
-        
-            
-          </div>
-
-          <p>{{product.description}}</p>
-
-       <div class=text-center><button type="button" class="btn btn-primary btn-lg" href="#"> <b>Nous contacter</b> </button></div> 
-
-         
   </div>
-</section>  
 
+{% for product in product %}
+<main>
+  <div class="album py-5 bg-body-white">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col">
+          <div class="card shadow-sm">
+            <img class="card-img-top" src="img\chevy-impala-6889699_1280.jpg" alt="Image"></img>
+            <div class="card-body">
+              <div class="text-center"><h4 >{{ product.title }}<h4></div>
+              <p class="card-text">Prix : {{ product.price }}€ <br> Km : {{ product.km }}Km<br> Année : {{ product.dateTime }}</p>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"> 
+                    <a href="{{ path('details')}}">Détails</a>
+                  </button>
+            </div>  
+          </div>                
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+  
+{% endfor %} 
 {% endblock %}

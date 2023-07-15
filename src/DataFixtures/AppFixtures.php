@@ -27,7 +27,7 @@ class AppFixtures extends Fixture
         // Creation d'un produit
         for ($i=0; $i < 10; $i++) {
             $product = new Product();
-
+            
             $product->setTitle($faker->words(2, true))
                     ->setPrice($faker->randomFloat(2, 100, 9999))
                     ->setdateTime($faker->date('2000', '2022'))
@@ -36,6 +36,7 @@ class AppFixtures extends Fixture
                     ->setUser($employee);
                     
             $manager->persist($product);
+
         }
 
         $manager->flush();
