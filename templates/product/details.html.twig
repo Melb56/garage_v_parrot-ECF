@@ -9,42 +9,83 @@
 
 {% block body %}
 
-<div class="text-center">
-        <div class="container">
-       
-          <h1>Voiture d'occasion</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..</p> <div>   
-            <!--Bouton Nous contacter-->    
-            <a><button type="button" class="btn btn-primary btn-lg" href="{{ path('contact')}}">Nous contacter</button></a>       
+<section class="py-5">
+  <div class="container">
+    <div class="row gx-5">
+      <aside class="col-lg-6">
+        <div class="border rounded-4 mb-3 d-flex justify-content-center">
+          <a data-fslightbox="mygalley" class="rounded-4" target="_blank" data-type="image" href="#">
+            <img style="max-width: 100%; max-height: 100vh; margin: auto;" class="rounded-4 fit" src="img\chevy-impala-6889699_1280.jpg" />
+          </a>
         </div>
-  </div>
+        <!-- gallerie -->
+        <div class="d-flex justify-content-center mb-3">
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="img\chevy-impala-6889699_1280.jpg" class="item-thumb">
+            <img width="60" height="60" class="rounded-2" src="img\chevy-impala-6889699_1280.jpg" />
+          </a>
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="img\chevy-impala-6889699_1280.jpg" class="item-thumb">
+            <img width="60" height="60" class="rounded-2" src="img\chevy-impala-6889699_1280.jpg" />
+          </a>
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="img\chevy-impala-6889699_1280.jpg" class="item-thumb">
+            <img width="60" height="60" class="rounded-2" src="img\chevy-impala-6889699_1280.jpg" />
+          </a>
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="img\chevy-impala-6889699_1280.jpg" class="item-thumb">
+            <img width="60" height="60" class="rounded-2" src="img\chevy-impala-6889699_1280.jpg" />
+          </a>
+          <a data-fslightbox="mygalley" class="border mx-1 rounded-2" target="_blank" data-type="image" href="img\chevy-impala-6889699_1280.jpg" class="item-thumb">
+            <img width="60" height="60" class="rounded-2" src="img\chevy-impala-6889699_1280.jpg" />
+          </a>
+        </div>
+        <!-- gallerie -->
+      </aside>
 
-{% for product in product %}
-<main>
-  <div class="album py-5 bg-body-white">
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-        <div class="col">
-          <div class="card shadow-sm">
-            <img class="card-img-top" src="img\chevy-impala-6889699_1280.jpg" alt="Image"></img>
-            <div class="card-body">
-              <div class="text-center"><h4 >{{ product.title }}<h4></div>
-              <p class="card-text">Prix : {{ product.price }}€ <br> Km : {{ product.km }}Km<br> Année : {{ product.dateTime }}</p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="btn">
-                  <button type="button" class="btn btn-sm btn-outline-secondary"> 
-                    <a href="{{ path('details')}}">Détails</a>
-                  </button>
-            </div>  
-          </div>                
-        </div>
-      </div>
+      <main class="col-lg-6">
+        <div class="ps-lg-3">
+          <h4 class="title text-dark"> TITRE </h4>
+          <div class="d-flex flex-row my-3"> </div>
+          <p>
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </p>
+
+          <div class="row">
+            <dt class="col-3">Prix :</dt>
+            <dd class="col-9">.....€</dd>
+
+            <dt class="col-3">Km : </dt>
+            <dd class="col-9">.....km</dd>
+
+            <dt class="col-3">Année :</dt>
+            <dd class="col-9">2000</dd>
+
+            <dt class="col-3">Carburant :</dt>
+            <dd class="col-9"></dd>
+          </div>
+          <hr />
+      <!--Description-->
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h6> Equipements : </h6>
+        <li>dolor sit amet</li>
+        <li>sed do eiusmod</li>
+        <li>quis nostrud</li>
+        <li>laboris nisi</li>
+    </div>  
+     <div class="col">
+      <h6> Options : </h6>
+        <li>dolor sit amet</li>
+        <li>sed do eiusmod</li>
+        <li>quis nostrud</li>
+        <li>laboris nisi</li>
+      </div> 
+</div>
+  <!--Description-->
+     </main>
     </div>
   </div>
-</main>
-  
-{% endfor %} 
+
+  <div class= "text-center"> <button type="button" class="btn btn-primary btn-lg"><a class="text-white" style="text-decoration:none" href="{{ path('contact')}}" >Nous contacter</a></button></div>
+</section>
+
 {% endblock %}

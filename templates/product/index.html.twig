@@ -17,14 +17,13 @@
 ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
 reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..</p> <div>   
             <!--Bouton Nous contacter-->    
-            <a><button type="button" class="btn btn-primary btn-lg" href="{{ path('contact')}}">Nous contacter</button></a>       
+           <div class= "text-center"> <button type="button" class="btn btn-primary btn-lg"><a class="text-white" style="text-decoration:none" href="{{ path('contact')}}" >Nous contacter</a></button></div>      
         </div>
   </div>
 
 {% for product in product %}
-<main>
-  <div class="album py-5 bg-body-white">
-    <div class="container">
+
+    <!-- <div class="py-5 bg-body-white">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
@@ -33,18 +32,50 @@ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur..</
               <div class="text-center"><h4 >{{ product.title }}<h4></div>
               <p class="card-text">Prix : {{ product.price }}€ <br> Km : {{ product.km }}Km<br> Année : {{ product.dateTime }}</p>
             </div>
-            <div class="d-flex justify-content-between align-items-center">
+            
                 <div class="btn">
                   <button type="button" class="btn btn-sm btn-outline-secondary"> 
-                    <a href="{{ path('details')}}">Détails</a>
+                  <a style="text-decoration:none" href="{{ path('details') }}">Détails</a>
                   </button>
-            </div>  
-          </div>                
+                </div>                 
         </div>
+      </div> 
+    </div> -->
+
+<div class=" container py-5 bg-body-white">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md g-3">
+  <div class="col">
+    <div class="card shadow-sm">
+     <img class="card-img-top" src="img\chevy-impala-6889699_1280.jpg" alt="Image"></img>
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text"> Prix : {{ product.price }}€ <br> Km : {{ product.km }}Km<br> Année : {{ product.dateTime }}</p>
       </div>
+      <div class="btn">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"> 
+                  <a style="text-decoration:none" href="{{ path('details') }}">Détails</a>
+                  </button>
+      </div> 
+  </div>   
+</div>
+  <div class="col">
+    <div class="card">
+      <img class="card-img-top" src="img\chevy-impala-6889699_1280.jpg" alt="Image"></img>
+      <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">Prix : {{ product.price }}€ <br> Km : {{ product.km }}Km<br> Année : {{ product.dateTime }}.</p>
+      </div>
+      <div class="btn">
+                  <button type="button" class="btn btn-sm btn-outline-secondary"> 
+                  <a style="text-decoration:none" href="{{ path('details') }}">Détails</a>
+                  </button>
+      </div> 
     </div>
   </div>
-</main>
+</div>
+</div> 
+
+
   
 {% endfor %} 
 {% endblock %}

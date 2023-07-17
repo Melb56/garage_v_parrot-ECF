@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
 {
-    #[Route('/voitures-doccasion', name: 'product_')]
+    #[Route('/voitures-doccasion', name: 'product_')]  
     public function product(ProductRepository $productRepository): Response
     {
         return $this->render('product/index.html.twig', [
@@ -21,10 +21,11 @@ class ProductController extends AbstractController
         ]);
     }
     #[Route('/détails', name: 'details')]
-    public function index(): Response
+    public function details(ProductRepository $productRepository): Response
     {
-        return $this->render('details/details.html.twig', [
-            'controller_name' => 'DetailsController',
+        return $this->render('product/details.html.twig', [
+            'products' => $productRepository,
         ]);
     }
 }
+#'controller_name' => 'DetailsController'
